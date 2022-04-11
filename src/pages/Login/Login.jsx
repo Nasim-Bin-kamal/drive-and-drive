@@ -1,0 +1,77 @@
+import React, { useState } from "react";
+import { Container, Form, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import styles from "./Login.module.css";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+
+const Login = () => {
+    const [loginData, setLoginData] = useState({});
+
+    const handleOnBlur = (e) => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+    };
+    console.log(loginData);
+
+    const handleSubmitLogin = (e) => {
+        e.preventDefault();
+    };
+
+    return (
+        <div className={styles.loginSection}>
+            <Container>
+                <div className="mx-auto py-5">
+                    <div
+                        className={`mx-auto my-5 p-4 border-0 rounded-3 shadow-sm ${styles.loginForm}`}
+                    >
+                        <h2 className="mx-auto mb-3 text-white text-center">Login</h2>
+
+                        <Form className="mx-auto w-100" onSubmit={handleSubmitLogin}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label className="text-white">Email</Form.Label>
+                                <Form.Control
+                                    onBlur={handleOnBlur}
+                                    className="rounded-pill"
+                                    name="email"
+                                    type="email"
+                                    placeholder="Enter Email"
+                                />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label className="text-white">Password</Form.Label>
+                                <Form.Control
+                                    onBlur={handleOnBlur}
+                                    className="rounded-pill"
+                                    name="password"
+                                    type="password"
+                                    placeholder="Enter Password"
+                                />
+                            </Form.Group>
+                            <Button
+                                className="mt-3  w-100 rounded-pill "
+                                variant="success"
+                                type="submit"
+                            >
+                                LOGIN
+                            </Button>
+                        </Form>
+                        <div className="mx-auto mt-3 text-center">
+                            <small className="text-white">Or Login with</small>
+                            <div className="mx-auto my-2  d-md-flex justify-content-space-around align-itmes-center">
+                                <Button className="my-1 me-1 rounded-pill w-100" variant="danger"><FaGoogle className="mb-1" /> Google</Button>
+                                <Button className="my-1 rounded-pill w-100" variant="dark"><FaGithub className="mb-1" /> Github</Button>
+                            </div>                        <div>
+                                <NavLink className="mx-auto text-decoration-none text-info" to="/register">Already Registered? Please Login</NavLink>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
+    );
+};
+
+export default Login;
