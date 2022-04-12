@@ -1,22 +1,49 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Container, Form, Button, Alert } from "react-bootstrap";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
+
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({});
+    const { signInWithGoogle, signInWithGithub, registerUser, errorMsg } = useAuth();
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     const handleOnBlur = (e) => {
+
+        const field = e.target.name;
+        const value = e.target.value;
+
         const newRegisterData = { ...registerData };
-        newRegisterData[e.target.name] = e.target.value;
+        newRegisterData[field] = value;
         setRegisterData(newRegisterData);
-    };
-    console.log(registerData);
+        console.log(field, value, registerData);
+
+    }
 
     const handleSubmitRegister = (e) => {
         e.preventDefault();
-    };
+        if (registerData.password !== registerData.password2) {
+            alert('Password did not match');
+            return;
+        }
+
+        registerUser(registerData?.email, registerData?.password, registerData?.name, location, navigate)
+
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate);
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithGithub(location, navigate);
+    }
 
     return (
         <div className={styles.regSection}>
@@ -25,6 +52,9 @@ const Register = () => {
                     <div
                         className={`mx-auto p-4 d-flex justify-content-center align-items-center flex-column border-0 rounded-3 shadow-sm ${styles.registerForm}`}
                     >
+                        {
+                            errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
+                        }
                         <h2 className="mx-auto mb-3 text-white">Register</h2>
 
                         <Form className="mx-auto w-100" onSubmit={handleSubmitRegister}>
@@ -83,13 +113,13 @@ const Register = () => {
                                         className="my-1 me-1 rounded-pill w-100 fw-bold"
                                         variant="danger"
                                     >
-                                        <FaGoogle className="mb-1" /> Google
+                                        <FaGoogle onClick={handleGoogleSignIn} className="mb-1" /> Google
                                     </Button>
                                     <Button
                                         className="my-1 rounded-pill w-100 fw-bold"
                                         variant="dark"
                                     >
-                                        <FaGithub className="mb-1" /> Github
+                                        <FaGithub onClick={handleGithubSignIn} className="mb-1" /> Github
                                     </Button>
                                 </div>
                                 <div>

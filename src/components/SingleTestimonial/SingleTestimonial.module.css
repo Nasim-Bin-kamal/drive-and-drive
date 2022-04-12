@@ -1,0 +1,13 @@
+.testimonialCard {
+    background-color: #f4f4f4;
+  }
+  .customerName {
+    color: #076b9d;
+  }
+  .ratings span {
+    margin-left: 0 !important;
+  }
+  
+  .commentSection {
+    height: 125px;
+  }

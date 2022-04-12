@@ -1,0 +1,5 @@
+.carCategory:hover{
+    background-color: rgba(0, 0, 0, 0.575);
+    color: white;
+    transition: .2s;
+}

@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Container, Form, Button, Alert } from "react-bootstrap";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const { signInWithGoogle, signInWithGithub, userSignIn, errorMsg } = useAuth();
+
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -18,7 +24,16 @@ const Login = () => {
 
     const handleSubmitLogin = (e) => {
         e.preventDefault();
-    };
+        userSignIn(loginData?.email, loginData?.password, location, navigate);
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate);
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithGithub(location, navigate);
+    }
 
     return (
         <div className={styles.loginSection}>
@@ -27,6 +42,9 @@ const Login = () => {
                     <div
                         className={`mx-auto my-5 p-4 border-0 rounded-3 shadow-sm ${styles.loginForm}`}
                     >
+                        {
+                            errorMsg && <Alert variant="danger" dismissible >{errorMsg}</Alert>
+                        }
                         <h2 className="mx-auto mb-3 text-white text-center">Login</h2>
 
                         <Form className="mx-auto w-100" onSubmit={handleSubmitLogin}>
@@ -61,8 +79,8 @@ const Login = () => {
                         <div className="mx-auto mt-3 text-center">
                             <small className="text-white">Or Login with</small>
                             <div className="mx-auto my-2  d-md-flex justify-content-space-around align-itmes-center">
-                                <Button className="my-1 me-1 rounded-pill w-100" variant="danger"><FaGoogle className="mb-1" /> Google</Button>
-                                <Button className="my-1 rounded-pill w-100" variant="dark"><FaGithub className="mb-1" /> Github</Button>
+                                <Button onClick={handleGoogleSignIn} className="my-1 me-1 rounded-pill w-100" variant="danger"><FaGoogle className="mb-1" /> Google</Button>
+                                <Button onClick={handleGithubSignIn} className="my-1 rounded-pill w-100" variant="dark"><FaGithub className="mb-1" /> Github</Button>
                             </div>                        <div>
                                 <NavLink className="mx-auto text-decoration-none text-info" to="/register">Already Registered? Please Login</NavLink>
                             </div>
