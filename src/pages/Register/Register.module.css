@@ -13,3 +13,10 @@
     max-width: 430px;
   
 }
+.myButton{
+    background-color: #E94560;
+}
+.googleButton{
+    background-color: #d09d06;
+    rotate: 50deg;
+}

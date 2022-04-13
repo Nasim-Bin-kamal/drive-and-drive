@@ -10,9 +10,15 @@
 }
 .loginForm{
     background-color: rgba(176, 170, 170, 0.33);
-    max-width: 430px;
-   
-    
+    max-width: 430px; 
+}
+
+.myButton{
+    background-color: #E94560;
+}
+.googleButton{
+    background-color: #d09d06;
+    rotate: 50deg;
 }
 
 

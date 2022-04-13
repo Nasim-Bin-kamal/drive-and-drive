@@ -33,8 +33,9 @@ const FeaturedCategories = () => {
                                         <Row xs={1} md={2} lg={2}>
                                             <Col>
                                                 <h3>{categoryName}</h3>
-                                                <Button className='mx-auto my-2 rounded-pill fw-bold' size='sm' variant='warning'><MdReadMore className='fw-bold fs-5' /> Explore</Button>
+                                                <Button className={`my-3 fw-bold border-0 rounded-pill ${styles.myButton}`} variant="dark" size='sm' ><MdReadMore className='fw-bold fs-5' /> Explore</Button>
                                             </Col>
+
                                             <Col>
                                                 <img className='img-fluid border-2 border-secondary rounded-3' src={image} alt="" />
                                             </Col>

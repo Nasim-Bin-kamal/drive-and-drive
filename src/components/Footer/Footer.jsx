@@ -72,13 +72,14 @@ const Footer = () => {
 
                         <InputGroup className="my-4">
                             <FormControl
+
                                 type="email"
                                 placeholder="Enter your email"
                                 aria-label="Enter your email"
                                 aria-describedby="basic-addon2"
                             />
-                            <Button variant="outline-warning" id="button-addon2">
-                                <FiSend className='mx-2 fs-5' />
+                            <Button variant="outline-light" id="button-addon2">
+                                <FiSend className={`mx-2 fs-5 fw-bolder ${styles.myButton}`} />
                             </Button>
                         </InputGroup>
                         <p>Subscribe To Our Newsletter For Latest Updates</p>

@@ -44,7 +44,7 @@ const TopSlider = () => {
                             <Carousel.Caption className={`${styles.caption}`}>
                                 <h1>{item?.caption}</h1>
                                 <p className="fs-4">{item?.description}</p>
-                                <Button className="text-white border border-2 rounded-pill px-4 py-2 slider-btn" variant="outside-light">Book Now <BsArrowRight /><i className="fas fa-angle-double-right"></i></Button>
+                                <Button className={`text-white border border-2 rounded-pill px-4 py-2 ${styles.sliderBtn}`} variant="outside-light">Book Now <BsArrowRight /><i className="fas fa-angle-double-right"></i></Button>
                             </Carousel.Caption>
                         </Carousel.Item>
                     ))

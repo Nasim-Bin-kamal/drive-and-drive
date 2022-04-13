@@ -8,6 +8,8 @@ import Register from './pages/Register/Register';
 import AuthProvider from './contexts/AuthProvider';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Products from './pages/Products/Products';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import DashboardHome from './pages/Dashboard/DashboardHome/DashboardHome';
 
 function App() {
   return (
@@ -21,6 +23,20 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/shop" element={<Products />} />
             <Route path="/productDetails" element={<ProductDetails />} />
+
+            <Route path="/dashboard/*" element={<PrivateRoute>
+              <DashboardHome />
+            </PrivateRoute>}>
+
+              {/* <Route path="manage-orders" element={<ManageOrders />} />
+              <Route path="add-package" element={<AddPackage />} />
+              <Route path="manage-packages" element={<ManagePackages />} />
+              <Route path="my-packages" element={<MyPackages />} />
+              <Route path="add-review" element={<AddReview />} /> */}
+            </Route>
+            {/* <Route path="/checkout" element={<PrivateRoute>
+              <Checkout />
+            </PrivateRoute>} /> */}
           </Routes>
         </Router>
       </AuthProvider>

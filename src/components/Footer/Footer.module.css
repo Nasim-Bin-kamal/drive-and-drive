@@ -2,8 +2,11 @@
     background-color: #1a1a1a;
     color: #e4dededc;
   }
+  .myButton{
+    color:#E94560
+  }
   .social:hover {
-    color: #fabc38;
+    color: #E94560;
     cursor: pointer;
   }
   .quickNav {
@@ -20,7 +23,7 @@
     line-height: 2.5rem;
   }
   .menuItem:hover {
-    color: rgb(250, 188, 56);
+    color: #E94560;
     font-weight: 700;
   }
   .footerLogo {

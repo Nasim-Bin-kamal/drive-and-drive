@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import styles from './CustomerReviews.module.css';
 import SingleTestimonial from '../SingleTestimonial/SingleTestimonial';
+import useAuth from '../../hooks/useAuth';
 
 const settings = {
     dots: true,
@@ -48,29 +49,29 @@ const settings = {
 
 const CustomerReviews = () => {
     const [reviews, setReviews] = useState([]);
-    // const { isLoading } = useAuth();
+    const { isLoading } = useAuth();
 
     useEffect(() => {
         fetch('https://desolate-beyond-60013.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, []);
-    // if (isLoading) {
-    //     return (
-    //         <div className="d-flex justify-content-center my-5 loading">
-    //             <Spinner className="" animation="grow" variant="danger" />
-    //             <Spinner className="" animation="grow" variant="warning" />
-    //             <Spinner className="" animation="grow" variant="success" />
-    //         </div>
-    //     )
-    // }
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center my-5 loading">
+                <Spinner className="" animation="grow" variant="danger" />
+                <Spinner className="" animation="grow" variant="warning" />
+                <Spinner className="" animation="grow" variant="success" />
+            </div>
+        )
+    }
 
     return (
         <div className={styles.reviewSection}>
             <Container>
-                <div className="text-center mx-auto">
-                    <h5 className="short-info">Testimonials and reviews</h5>
-                    <h2 className="text-secondary fw-bold">What Our Customers Say</h2>
+                <div className="mx-auto">
+
+                    <h1 className="">Customer Reviews</h1>
                 </div>
                 <div className="mx-3 py-5">
                     <Slider {...settings}>

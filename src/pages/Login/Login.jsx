@@ -69,8 +69,8 @@ const Login = () => {
                                 />
                             </Form.Group>
                             <Button
-                                className="mt-3  w-100 rounded-pill "
-                                variant="success"
+                                className={`mt-3  w-100 rounded-pill border-0 ${styles.myButton}`}
+                                variant="dark"
                                 type="submit"
                             >
                                 LOGIN
@@ -79,8 +79,8 @@ const Login = () => {
                         <div className="mx-auto mt-3 text-center">
                             <small className="text-white">Or Login with</small>
                             <div className="mx-auto my-2  d-md-flex justify-content-space-around align-itmes-center">
-                                <Button onClick={handleGoogleSignIn} className="my-1 me-1 rounded-pill w-100" variant="danger"><FaGoogle className="mb-1" /> Google</Button>
-                                <Button onClick={handleGithubSignIn} className="my-1 rounded-pill w-100" variant="dark"><FaGithub className="mb-1" /> Github</Button>
+                                <Button onClick={handleGoogleSignIn} className={`my-1 me-1 rounded-pill w-100 border-0 fw-bold ${styles.googleButton}`} variant="danger"><FaGoogle className="mb-1" /> Google</Button>
+                                <Button onClick={handleGithubSignIn} className="my-1 rounded-pill w-100 border-0 fw-bold" variant="dark"><FaGithub className="mb-1" /> Github</Button>
                             </div>                        <div>
                                 <NavLink className="mx-auto text-decoration-none text-info" to="/register">Already Registered? Please Login</NavLink>
                             </div>

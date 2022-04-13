@@ -1,3 +1,14 @@
+.discount{
+
+}
+.myButton,.discount{
+  background-color: #E94560;
+}
+.price{
+  color: #E94560;
+}
+
+
 .content {
     position: relative;
     /* width: 100%; */
@@ -7,7 +18,7 @@
   }
   
   .content .contentOverlay {
-    background: rgba(0, 0, 0, 0.685);
+    background: rgba(140, 122, 122, 0.434);
     position: absolute;
     height: 100%;
     border-radius: 5px;
@@ -66,11 +77,11 @@
     text-transform: uppercase;
   }
   
-  .contentDetails p {
+  /* .contentDetails p {
     color: #fff;
     font-size: 0.8em;
   }
-  
+   */
   .fadeInBottom {
     top: 80%;
   }

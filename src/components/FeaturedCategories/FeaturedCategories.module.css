@@ -1,5 +1,8 @@
 .carCategory:hover{
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(0, 0, 0, 0.359);
     color: white;
-    transition: .2s;
+    transition: .3s;
+}
+.myButton{
+    background-color: #E94560;
 }

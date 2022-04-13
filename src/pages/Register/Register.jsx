@@ -100,8 +100,8 @@ const Register = () => {
                                 />
                             </Form.Group>
                             <Button
-                                className="mt-3 w-100 rounded-pill "
-                                variant="info"
+                                className={`mt-3  w-100 rounded-pill border-0 ${styles.myButton}`}
+                                variant="dark"
                                 type="submit"
                             >
                                 REGISTER
@@ -110,13 +110,13 @@ const Register = () => {
                                 <small className="text-white">Or Register with</small>
                                 <div className="mx-auto my-2  d-md-flex justify-content-space-around align-itmes-center">
                                     <Button
-                                        className="my-1 me-1 rounded-pill w-100 fw-bold"
+                                        className={`my-1 me-1 rounded-pill w-100 fw-bold border-0 ${styles.googleButton}`}
                                         variant="danger"
                                     >
                                         <FaGoogle onClick={handleGoogleSignIn} className="mb-1" /> Google
                                     </Button>
                                     <Button
-                                        className="my-1 rounded-pill w-100 fw-bold"
+                                        className="my-1 rounded-pill w-100 fw-bold border-0"
                                         variant="dark"
                                     >
                                         <FaGithub onClick={handleGithubSignIn} className="mb-1" /> Github
