@@ -26,13 +26,14 @@ const DashboardHome = () => {
                                                 user?.photoURL ? (
                                                     <img className='mx-2 img-fluid  rounded-circle border border-2 w-25' src={user?.photoURL} alt="" />
                                                 ) : (
-                                                    <CgProfile className='mx-2 fs-2' />
+                                                    <CgProfile className='mx-2 fs-1' />
                                                 )
                                             }
                                             <h6 className='text-success'>Hello, {user?.displayName}</h6>
 
                                         </div>
-                                        <Link to="home"><span className="me-3"><FaHome /></span>Home</Link>
+                                        <hr />
+                                        <Link to="/home"><span className="me-3"><FaHome /></span>Home</Link>
 
                                         {
                                             user && <>
@@ -46,8 +47,9 @@ const DashboardHome = () => {
                                         {
                                             user && <>
 
+                                                <Link to="manage-products"><span className="me-3"><FaServicestack /></span>Manage Products</Link>
                                                 <Link to="manage-orders"><span className="me-3"><FaServicestack /></span>Manage Orders</Link>
-                                                <Link to="add-orders"><span className="me-3"><FaPlusCircle /></span>Add Product</Link>
+                                                <Link to="add-product"><span className="me-3"><FaPlusCircle /></span>Add Product</Link>
                                                 <Link to="make-admin"><span className="me-3"><FaUserPlus /></span>Make Admin</Link>
                                             </>
                                         }
@@ -59,7 +61,7 @@ const DashboardHome = () => {
                         </Col>
 
                         <Col xs={12} sm={12} md={9} lg={9} xl={9}>
-                            <div className="bg-light rounded-3 px-2 py-4 border">
+                            <div className="bg-light rounded-3 px-2 py-4 border" >
 
                                 <Outlet />
                             </div>

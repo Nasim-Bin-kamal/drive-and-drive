@@ -3,6 +3,7 @@ import CustomerReviews from '../../components/CustomerReviews/CustomerReviews';
 import FeaturedCategories from '../../components/FeaturedCategories/FeaturedCatagories';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import RatingIcon from '../../components/Rating/Rating';
 import TopProducts from '../../components/TopProducts/TopProducts';
 import TopSlider from '../../components/TopSlider/TopSlider';
 

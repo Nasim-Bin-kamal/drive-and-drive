@@ -1,11 +1,13 @@
-.dashboardTitle{
+.dashboardTitle {
     color: #E94560;
 }
-.dashboardSidebar{
-height: 100vh;
-position: static;
-top: 100px;
+
+.dashboardSidebar {
+    height: 100vh;
+    position: sticky;
+    top: 100px;
 }
+
 .dashNav a {
     text-decoration: none;
     font-size: 18px;
@@ -15,6 +17,7 @@ top: 100px;
     cursor: pointer;
     transition: 0.3s;
 }
+
 .dashNav a:hover {
     color: #FFF;
     background-color: #E94560;

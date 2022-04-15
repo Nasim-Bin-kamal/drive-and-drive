@@ -4,6 +4,7 @@ import SingleProduct from '../SingleProduct/SingleProduct';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick/lib/slider';
+import useProducts from '../../hooks/useProducts';
 
 
 const settings = {
@@ -45,19 +46,18 @@ const settings = {
 };
 
 const TopProducts = () => {
+    const [products] = useProducts([]);
+
+    const topProducts = products.filter((cars) => cars.price > "40000")
     return (
         <div>
             <Container>
                 <h1>Top Selling Cars</h1>
                 <div className='mx-3 my-5'>
                     <Slider {...settings}>
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
-                        <SingleProduct />
+                        {
+                            topProducts?.map((product) => (<SingleProduct key={product?._id} product={product} />))
+                        }
                     </Slider>
                 </div>
             </Container>

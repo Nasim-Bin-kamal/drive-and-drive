@@ -89,7 +89,7 @@ const Footer = () => {
 
             </Container>
             <div className={`${styles.footerEnd} p-4 text-center fw-lighter`} >
-                <small>&copy; Copyright 2021 | All Rights Reserved By Drive & Drive LTD.</small>
+                <small>&copy; Copyright 2022 | All Rights Reserved By Drive & Drive LTD.</small>
             </div>
         </div>
     );

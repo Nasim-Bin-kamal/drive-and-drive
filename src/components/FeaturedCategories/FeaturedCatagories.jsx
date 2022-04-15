@@ -23,7 +23,7 @@ const FeaturedCategories = () => {
     return (
         <div className='mx-auto my-5'>
             <Container>
-                <h1 className='mx-auto my-5'>Featured Catagories</h1>
+                <h1 className='mx-auto my-5'>Featured Categories</h1>
                 <div>
                     <Row xs={1} md={2} lg={3}>
                         {
