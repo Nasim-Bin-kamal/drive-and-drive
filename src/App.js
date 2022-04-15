@@ -15,13 +15,15 @@ import AddProduct from './pages/Dashboard/AddProduct/AddProduct';
 import ManageOrders from './pages/Dashboard/ManageOrders/ManageOrders';
 import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import { ToastContainer } from 'react-bootstrap';
+import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
+import UpdateProduct from './pages/Dashboard/UpdateProduct/UpdateProduct';
+
 
 function App() {
   return (
     <div className="App">
+
       <AuthProvider>
-        <ToastContainer />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,7 +43,8 @@ function App() {
               <Route path="manage-orders" element={<ManageOrders />} />
               <Route path="add-product" element={<AddProduct />} />
               <Route path="manage-products" element={<ManageProducts />} />
-              {/* <Route path="my-orders" element={<MyPackages />} /> */}
+              <Route path="manage-products/update-product/:id" element={<UpdateProduct />} />
+              <Route path="my-orders" element={<MyOrders />} />
               <Route path="add-review" element={<AddReview />} />
               <Route path="make-admin" element={<AddAdmin />} />
             </Route>

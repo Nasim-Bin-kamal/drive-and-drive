@@ -1,0 +1,7 @@
+.approveBtn,
+.cancelBtn {
+  cursor: pointer;
+}
+.cancelBtn{
+    color: red;
+}

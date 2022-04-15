@@ -30,13 +30,13 @@ const AddReview = () => {
         data.email = user?.email;
         data.rating = rating;
 
-        axios.post('https://serene-fjord-11430.herokuapp.com/reviews', data)
+        axios.post('http://localhost:5000/reviews', data)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
                     reviewNotify();
+                    setRating('');
                     reset();
-                    setRating("");
 
                 }
             });
@@ -48,7 +48,7 @@ const AddReview = () => {
     return (
         <div>
             <Container>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
                 <div className="mx-auto text-center py-5">
                     <h2>Please Make A Review</h2>
                     <h5>Review about our website and services</h5>

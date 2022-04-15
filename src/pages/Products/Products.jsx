@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import useProducts from '../../hooks/useProducts';
 
 const Products = () => {
-    const [products] = useProducts([]);
+    const [products] = useProducts();
     const { isLoading } = useAuth();
     if (isLoading) {
         return (

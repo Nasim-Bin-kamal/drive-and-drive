@@ -28,9 +28,9 @@ const SingleProduct = ({ product }) => {
                 </Card.Body>
                 <div className={`${styles.contentDetails} ${styles.fadeInBottom}`}>
 
-                    <Button className={`my-3 me-2 fw-bold border-0 rounded-pill ${styles.myButton}`} variant="secondary">
+                    {/* <Button className={`my-3 me-2 fw-bold border-0 rounded-pill ${styles.myButton}`} variant="secondary">
                         <FaCartArrowDown className='mb-1 me-2' />Add
-                    </Button>
+                    </Button> */}
                     <Button onClick={() => navigate(`/product/${_id}`)} className={`my-3 fw-bold border-0 rounded-pill ${styles.myButton}`} variant="secondary">
                         <MdReadMore className='fs-5' /> Details
                     </Button>

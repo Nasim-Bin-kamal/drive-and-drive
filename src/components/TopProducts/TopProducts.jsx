@@ -46,7 +46,7 @@ const settings = {
 };
 
 const TopProducts = () => {
-    const [products] = useProducts([]);
+    const [products] = useProducts();
 
     const topProducts = products.filter((cars) => cars.price > "40000")
     return (

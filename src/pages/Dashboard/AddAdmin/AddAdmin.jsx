@@ -29,7 +29,7 @@ const AddAdmin = () => {
     const handleSubmitAdmin = (e) => {
         const user = { email };
         e.preventDefault();
-        fetch('https://serene-fjord-11430.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('idToken')}`,
@@ -55,7 +55,7 @@ const AddAdmin = () => {
     return (
         <div>
             <Container>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
                 <h2 className="text-center mx-auto title py-5">Add New Admin</h2>
                 <div className={`rounded-3 mx-auto my-4 p-3 ${styles.addAdminSection}`}>
                     <Form onSubmit={handleSubmitAdmin}>

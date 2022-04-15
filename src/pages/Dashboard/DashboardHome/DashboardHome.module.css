@@ -3,9 +3,9 @@
 }
 
 .dashboardSidebar {
-    height: 100vh;
+    height: 100%;
     position: sticky;
-    top: 100px;
+    top:0%;
 }
 
 .dashNav a {

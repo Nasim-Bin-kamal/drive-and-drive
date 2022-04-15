@@ -1,1 +1,15 @@
 
+.title {
+    color: #08a2b6;
+  }
+  .fas {
+    cursor: pointer;
+  }
+  .editIcon {
+    cursor: pointer;
+    color: rgb(246, 194, 6);
+  }
+  .deleteIcon {
+    color: red;
+    cursor: pointer;
+  }

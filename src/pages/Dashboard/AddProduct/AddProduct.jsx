@@ -10,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const AddProduct = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        axios.post('https://serene-fjord-11430.herokuapp.com/products', data)
+        axios.post('http://localhost:5000/products', data)
             .then(res => {
                 if (res?.data?.insertedId) {
                     successNotify();
@@ -24,14 +24,14 @@ const AddProduct = () => {
     const successNotify = () => {
         toast.success('Successfully Added a Product', {
             autoClose: 2000,
-            position: 'top-center'
+            position: 'bottom-left'
         });
     }
     console.log(errors);
     return (
         <div>
             <Container>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
                 <div>
                     <h2 className="text-center mx-auto py-3">Add a New Product</h2>
                 </div>
