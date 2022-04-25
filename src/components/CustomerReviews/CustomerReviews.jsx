@@ -52,7 +52,7 @@ const CustomerReviews = () => {
     const { isLoading } = useAuth();
 
     useEffect(() => {
-        fetch('https://desolate-beyond-60013.herokuapp.com/reviews')
+        fetch('https://pure-mesa-24596.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, []);
