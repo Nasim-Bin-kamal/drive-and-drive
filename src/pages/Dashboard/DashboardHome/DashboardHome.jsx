@@ -8,7 +8,7 @@ import { CgProfile } from "react-icons/cg";
 
 const DashboardHome = () => {
 
-    const { user, admin, userSignOut } = useAuth();
+    const { user, admin, userSingOut } = useAuth();
 
 
     return (
@@ -24,7 +24,7 @@ const DashboardHome = () => {
                                             <h2 className={`fw-bold ${styles.dashboardTitle}`}>Dashboard</h2>
                                             {
                                                 user?.photoURL ? (
-                                                    <img className='mx-2 img-fluid  rounded-circle border border-2 w-25' src={user?.photoURL} alt="" />
+                                                    <img className='mx-2 img-fluid  rounded-circle border border-2' src={user?.photoURL} alt="" width="80px" />
                                                 ) : (
                                                     <CgProfile className='mx-2 fs-1' />
                                                 )
@@ -36,7 +36,7 @@ const DashboardHome = () => {
                                         <Link to="/home"><span className="me-3"><FaHome /></span>Home</Link>
 
                                         {
-                                            user && <>
+                                            (user && !admin) && <>
 
                                                 <Link to="my-orders"><span className="me-3"><FaListUl /></span>My Orders</Link>
 
@@ -45,7 +45,7 @@ const DashboardHome = () => {
                                         }
 
                                         {
-                                            user && <>
+                                            admin && <>
 
                                                 <Link to="manage-products"><span className="me-3"><FaServicestack /></span>Manage Products</Link>
                                                 <Link to="manage-orders"><span className="me-3"><FaServicestack /></span>Manage Orders</Link>
@@ -54,7 +54,7 @@ const DashboardHome = () => {
                                             </>
                                         }
 
-                                        <Link to='/login' onClick={userSignOut}><span className="me-3"><FaSignOutAlt /></span>Logout</Link>
+                                        <Link to='/home' onClick={userSingOut}><span className="me-3"><FaSignOutAlt /></span>Logout</Link>
                                     </>
                                 </Nav>
                             </div>
@@ -68,8 +68,8 @@ const DashboardHome = () => {
                         </Col>
                     </Row>
                 </Tab.Container>
-            </Container>
-        </div>
+            </Container >
+        </div >
     );
 };
 

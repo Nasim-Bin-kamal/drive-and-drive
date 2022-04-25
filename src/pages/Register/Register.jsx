@@ -64,7 +64,7 @@ const Register = () => {
                                     onBlur={handleOnBlur}
                                     className="rounded-pill"
                                     type="text"
-                                    name="fullName"
+                                    name="name"
                                     placeholder="Enter Full Name"
                                 />
                             </Form.Group>

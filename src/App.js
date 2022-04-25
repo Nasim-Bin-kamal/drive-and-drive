@@ -17,6 +17,8 @@ import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
 import UpdateProduct from './pages/Dashboard/UpdateProduct/UpdateProduct';
+import { ToastContainer } from 'react-toastify';
+import AdminRoute from './components/AdminRoute/AdminRoute';
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
 
       <AuthProvider>
         <Router>
+          {/* <ToastContainer /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -40,13 +43,19 @@ function App() {
               <DashboardHome />
             </PrivateRoute>}>
 
-              <Route path="manage-orders" element={<ManageOrders />} />
+              <Route path="manage-orders" element={<AdminRoute>
+                <ManageOrders />
+              </AdminRoute>} />
               <Route path="add-product" element={<AddProduct />} />
-              <Route path="manage-products" element={<ManageProducts />} />
-              <Route path="manage-products/update-product/:id" element={<UpdateProduct />} />
+              <Route path="manage-products" element={<AdminRoute>
+                <ManageProducts />
+              </AdminRoute>} />
+              <Route path="manage-products/update/:id" element={<UpdateProduct />} />
               <Route path="my-orders" element={<MyOrders />} />
               <Route path="add-review" element={<AddReview />} />
-              <Route path="make-admin" element={<AddAdmin />} />
+              <Route path="make-admin" element={<AdminRoute>
+                <AddAdmin />
+              </AdminRoute>} />
             </Route>
             {/* <Route path="/checkout" element={<PrivateRoute>
               <Checkout />

@@ -92,7 +92,16 @@ const ManageOrders = () => {
                                     <td>{order?.orderedProduct?.carName}</td>
                                     <td>{order?.name}</td>
                                     <td>{order?.email}</td>
-                                    <td>{order?.orderStatus}</td>
+                                    <td
+                                        className={
+                                            order?.orderStatus === "Approved"
+                                                ? "text-success fw-bold"
+                                                : "text-danger fw-bold"
+                                        }
+                                    >
+                                        <span className="px-2 py-1 bg-secondary bg-opacity-50 rounded-pill">{order?.orderStatus}</span>
+                                    </td>
+
                                     <td className="d-flex align-items-center justify-content-around h-100">
                                         <FcApproval onClick={() => handleApproveOrder(order?._id)} className={`fs-4 ${styles.approveBtn}`} />
                                         <GiCancel onClick={() => handleCancelOrder(order?._id)} className={`fs-4 text-red ${styles.cancelBtn}`} />

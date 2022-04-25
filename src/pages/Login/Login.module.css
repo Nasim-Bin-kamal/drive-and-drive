@@ -1,5 +1,6 @@
 .loginSection{
-    background-image: url('https://i.ibb.co/VvK1zSx/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg');
+    /* background-image: url('https://i.ibb.co/VvK1zSx/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg'); */
+    background:linear-gradient(#031532,#20568F,#031532);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;

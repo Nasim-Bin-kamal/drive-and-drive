@@ -6,6 +6,7 @@ import Header from '../../components/Header/Header';
 import RatingIcon from '../../components/Rating/Rating';
 import TopProducts from '../../components/TopProducts/TopProducts';
 import TopSlider from '../../components/TopSlider/TopSlider';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <FeaturedCategories />
             <TopProducts />
             <CustomerReviews />
+            <Contact />
             <Footer />
         </div>
     );

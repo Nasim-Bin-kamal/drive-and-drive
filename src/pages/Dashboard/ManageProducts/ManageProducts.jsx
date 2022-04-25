@@ -36,9 +36,9 @@ const ManageProducts = () => {
         }
 
     }
-    // const handleUpdateProduct = (id) => {
-    //     navigate(`manage-products/update-product/${id}`)
-    // }
+    const handleUpdateProduct = (id) => {
+        navigate(`update/${id}`)
+    }
 
     return (
         <div>
@@ -56,7 +56,7 @@ const ManageProducts = () => {
                                 <th>Product Name</th>
                                 <th>Category</th>
                                 <th>Price</th>
-                                <th>Edit / Delete</th>
+                                <th>Update / Delete</th>
                             </tr>
                         </thead>
                         <tbody className="text-center">
@@ -65,11 +65,11 @@ const ManageProducts = () => {
                                     <td>{product?._id}</td>
                                     <td>{product?.carName}</td>
                                     <td>{product?.category}</td>
-                                    <td>{product?.price}</td>
+                                    <td>${product?.price}</td>
 
                                     <td>
                                         <div className='d-flex justify-content-evenly align-items-center'>
-                                            {/* <FaEdit className={styles.editIcon} onClick={() => handleUpdateProduct(product?._id)} /> */}
+                                            <FaEdit className={styles.editIcon} onClick={() => handleUpdateProduct(product?._id)} />
                                             <AiFillDelete className={styles.deleteIcon} onClick={() => handleDeleteProduct(product?._id)} />
                                         </div>
                                     </td>

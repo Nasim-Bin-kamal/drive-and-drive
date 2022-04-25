@@ -21,7 +21,7 @@ const MyOrders = () => {
     const cancelNotify = () => {
         toast.success('Order Cancel Successfully!!', {
             position: 'top-center',
-            autoClose: 3000
+            autoClose: 2000
         });
     }
 
@@ -69,7 +69,15 @@ const MyOrders = () => {
                                     </td>
                                     <td>${orderedProduct?.price}</td>
                                     <td>{orderDate}</td>
-                                    <td>{orderStatus}</td>
+                                    <td
+                                        className={
+                                            orderStatus === "Approved"
+                                                ? "text-success fw-bold"
+                                                : "text-danger fw-bold"
+                                        }
+                                    >
+                                        <span className="px-2 py-1 bg-secondary bg-opacity-50 rounded-pill">{orderStatus}</span>
+                                    </td>
                                     <td className="">
                                         <GiCancel onClick={() => handleCancelOrder(_id)} className={`fs-4 ${styles.cancelBtn}`} title="cancel" />
                                     </td>
