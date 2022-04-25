@@ -15,7 +15,7 @@ const OrderModal = ({ showModal, handleModalClose, product, orderNotify }) => {
         data.orderDate = new Date().toLocaleDateString();
         data.orderedProduct = { ...product };
 
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://pure-mesa-24596.herokuapp.com/orders', data)
             .then(res => {
 
                 if (res.data?.insertedId) {

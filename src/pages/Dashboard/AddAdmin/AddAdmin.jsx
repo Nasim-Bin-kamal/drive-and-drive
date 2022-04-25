@@ -29,7 +29,7 @@ const AddAdmin = () => {
     const handleSubmitAdmin = (e) => {
         const user = { email };
         e.preventDefault();
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://pure-mesa-24596.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('idToken')}`,

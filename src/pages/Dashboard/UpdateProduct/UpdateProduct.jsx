@@ -16,7 +16,7 @@ const UpdateProduct = () => {
     const { carName, company, price, engineCapacity, power, breaking, model, image, category } = updateProduct || {};
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://pure-mesa-24596.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setUpdateProduct(data));
     }, [id]);
@@ -25,7 +25,7 @@ const UpdateProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/products/update/${id}`;
+        const url = `https://pure-mesa-24596.herokuapp.com/products/update/${id}`;
         const proceed = window.confirm('Are you want to update this product');
         if (proceed) {
             axios.put(url, data)

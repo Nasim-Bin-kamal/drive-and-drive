@@ -23,7 +23,7 @@ const ManageOrders = () => {
         });
     }
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://pure-mesa-24596.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -36,7 +36,7 @@ const ManageOrders = () => {
     const handleApproveOrder = (id) => {
         const data = { orderStatus: "Approved" };
 
-        const url = `http://localhost:5000/orders/update/${id}`;
+        const url = `https://pure-mesa-24596.herokuapp.com/orders/update/${id}`;
         axios.put(url, data)
             .then(res => {
                 console.log(res.data);
@@ -49,7 +49,7 @@ const ManageOrders = () => {
     }
 
     const handleCancelOrder = (id) => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://pure-mesa-24596.herokuapp.com/orders/${id}`;
         const proceed = window.confirm('Are you want to cancel this order');
         if (proceed) {
             axios.delete(url)

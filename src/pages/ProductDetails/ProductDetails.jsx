@@ -15,7 +15,7 @@ const ProductDetails = () => {
     const { carName, price, image, company, model, engineCapacity, power, breaking, category } = product || {}
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://pure-mesa-24596.herokuapp.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
