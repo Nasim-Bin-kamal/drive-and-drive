@@ -29,7 +29,7 @@ const AddReview = () => {
         data.name = user?.displayName;
         data.email = user?.email;
         data.rating = rating;
-
+        console.log(data);
         axios.post('https://pure-mesa-24596.herokuapp.com/reviews', data)
             .then(res => {
                 console.log(res.data);
