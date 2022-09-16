@@ -19,6 +19,8 @@ import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
 import UpdateProduct from './pages/Dashboard/UpdateProduct/UpdateProduct';
 import { ToastContainer } from 'react-toastify';
 import AdminRoute from './components/AdminRoute/AdminRoute';
+import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/shop" element={<Products />} />
@@ -60,6 +63,7 @@ function App() {
             {/* <Route path="/checkout" element={<PrivateRoute>
               <Checkout />
             </PrivateRoute>} /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </AuthProvider>

@@ -37,7 +37,7 @@ const Header = () => {
         userSingOut(location, navigate);
     }
     return (
-        <Navbar collapseOnSelect className={`${styles.navbarBg}`} bg="" variant="dark" fixed="top" expand="lg" >
+        <Navbar collapseOnSelect className={`${styles.navbarBg}`} bg="" variant="dark" sticky="top" expand="lg" >
             <Container>
                 <Navbar.Brand className={`me-3 ${styles.navBrand}`}>
                     <NavLink to="/home">

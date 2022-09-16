@@ -78,10 +78,11 @@ const Login = () => {
                         </Form>
                         <div className="mx-auto mt-3 text-center">
                             <small className="text-white">Or Login with</small>
-                            <div className="mx-auto my-2  d-md-flex justify-content-space-around align-itmes-center">
+                            <div className="mx-auto my-2  d-md-flex justify-content-between align-itmes-center">
                                 <Button onClick={handleGoogleSignIn} className={`my-1 me-1 rounded-pill w-100 border-0 fw-bold ${styles.googleButton}`} variant="danger"><FaGoogle className="mb-1" /> Google</Button>
                                 <Button onClick={handleGithubSignIn} className="my-1 rounded-pill w-100 border-0 fw-bold" variant="dark"><FaGithub className="mb-1" /> Github</Button>
-                            </div>                        <div>
+                            </div>
+                            <div>
                                 <NavLink className="mx-auto text-decoration-none text-info" to="/register">Don't have account? Register First</NavLink>
                             </div>
                         </div>

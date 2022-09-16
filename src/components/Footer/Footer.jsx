@@ -63,7 +63,7 @@ const Footer = () => {
                         <p>24 hours online service.</p>
 
                         <address>
-                            <i>3/4, Basundaran Model Town</i><br />
+                            <i>3/4, Basundarah Model Town</i><br />
                             <i>Dhaka, Bangladesh</i>
                         </address>
                     </Col>

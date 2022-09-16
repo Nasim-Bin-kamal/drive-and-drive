@@ -108,7 +108,7 @@ const Register = () => {
                             </Button>
                             <div className="mx-auto mt-3 text-center">
                                 <small className="text-white">Or Register with</small>
-                                <div className="mx-auto my-2  d-md-flex justify-content-space-around align-itmes-center">
+                                <div className="mx-auto my-2  d-md-flex justify-content-between align-itmes-center">
                                     <Button
                                         className={`my-1 me-1 rounded-pill w-100 fw-bold border-0 ${styles.googleButton}`}
                                         variant="danger"
