@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import styles from "./ProductDetails.module.css";
-import { FaCartArrowDown } from "react-icons/fa";
+// import { FaCartArrowDown } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { GiConfirmed } from "react-icons/gi";
 import { toast } from "react-toastify";
 import OrderModal from "../../components/OrderModal/OrderModal";
+import useAuth from "../../hooks/useAuth";
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const { isLoading } = useAuth();
   const [product, setProduct] = useState({});
   const {
     carName,
@@ -41,6 +43,19 @@ const ProductDetails = () => {
       autoClose: 2000,
     });
   };
+
+  if (isLoading) {
+    return (
+      <div
+        className="d-flex justify-content-center py-5"
+        style={{ margin: "300px 0" }}
+      >
+        <Spinner animation="grow" variant="danger" />
+        <Spinner animation="grow" variant="warning" />
+        <Spinner animation="grow" variant="success" />
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto">

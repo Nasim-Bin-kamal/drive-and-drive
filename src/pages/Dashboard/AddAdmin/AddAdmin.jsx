@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Button, Form } from "react-bootstrap";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import styles from "./AddAdmin.module.css";
 
 const AddAdmin = () => {
@@ -50,7 +50,6 @@ const AddAdmin = () => {
   return (
     <div>
       <Container>
-        {/* <ToastContainer /> */}
         <h2 className="text-center mx-auto title py-5">Add New Admin</h2>
         <div className={`rounded-3 mx-auto my-4 p-3 ${styles.addAdminSection}`}>
           <Form onSubmit={handleSubmitAdmin}>

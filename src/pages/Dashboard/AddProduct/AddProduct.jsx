@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import styles from "./AddProduct.module.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
   const {
@@ -33,7 +33,6 @@ const AddProduct = () => {
   return (
     <div>
       <Container>
-        {/* <ToastContainer /> */}
         <div>
           <h2 className="text-center mx-auto py-3">Add a New Product</h2>
         </div>

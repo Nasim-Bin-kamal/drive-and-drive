@@ -11,7 +11,7 @@ const UpdateProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [updateId, setUpdateId] = useState({});
+  // const [updateId, setUpdateId] = useState({});
 
   const [updateProduct, setUpdateProduct] = useState({});
 

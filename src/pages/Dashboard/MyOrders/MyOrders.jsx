@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import { GiCancel } from "react-icons/gi";
 import styles from "./MyOrders.module.css";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import useAuth from "../../../hooks/useAuth";
 
 const MyOrders = () => {
